@@ -1,0 +1,166 @@
+{
+  "common": {
+    "language": "Language",
+    "english": "English",
+    "bangla": "বাংলা",
+    "lang": {
+      "en": "English",
+      "bn": "Bengali"
+    }
+  },
+  "nav": {
+    "menu": "Menu",
+    "about": "About",
+    "contact": "Contact",
+    "signIn": "Sign in",
+    "signOut": "Sign out"
+  },
+  "hero": {
+    "overline": "Fine Dining Experience",
+    "title1": "Where Every Meal",
+    "title2": "Tells a Story",
+    "desc": "Savor the finest Italian cuisine crafted with passion, tradition, and the freshest seasonal ingredients — right in the heart of the city.",
+    "cta1": "Explore Menu"
+  },
+  "featured": {
+    "overline": "From Our Kitchen",
+    "title": "Featured Dishes",
+    "subtitle": "A selection of our most beloved creations, made fresh daily with seasonal ingredients.",
+    "dishes": [
+      {
+        "name": "Truffle Risotto",
+        "description": "Arborio rice slow-cooked with black truffle, parmesan & wild mushrooms.",
+        "price": "$38",
+        "badge": "Chef's Pick"
+      },
+      {
+        "name": "Branzino al Forno",
+        "description": "Whole sea bass roasted with lemon, capers, olives & fresh herbs.",
+        "price": "$44",
+        "badge": "Seasonal"
+      },
+      {
+        "name": "Tagliatelle al Ragù",
+        "description": "Hand-rolled pasta with slow-braised beef ragù & aged pecorino.",
+        "price": "$28",
+        "badge": "House Favorite"
+      },
+      {
+        "name": "Burrata & Prosciutto",
+        "description": "Imported burrata, San Daniele prosciutto, heirloom tomatoes & basil oil.",
+        "price": "$22",
+        "badge": "Starter"
+      }
+    ]
+  },
+  "values": {
+    "overline": "Our Promise",
+    "title": "Why Choose Us",
+    "subtitle": "We believe exceptional dining goes beyond the plate — it's about the people, the passion, and the principles behind every meal.",
+    "items": [
+      {
+        "title": "Farm-Fresh Ingredients",
+        "description": "We source directly from local farms and trusted suppliers to bring you the purest flavors every season."
+      },
+      {
+        "title": "Expert Craftsmanship",
+        "description": "Our chefs bring decades of Italian culinary tradition, elevating every dish into a work of art."
+      },
+      {
+        "title": "Made with Passion",
+        "description": "Every recipe is a labor of love — prepared with care, attention, and an unwavering commitment to taste."
+      },
+      {
+        "title": "Family & Community",
+        "description": "A warm, welcoming space for families, friends, and special occasions — because great food brings people together."
+      }
+    ]
+  },
+  "menuCta": {
+    "overline": "Hungry for More?",
+    "title": "Explore Our Full Menu",
+    "desc": "From antipasti to dolci, our menu is a journey through the best of Italian cuisine. Starters, mains, desserts, wines — it's all waiting for you.",
+    "browseFull": "Browse Full Menu"
+  },
+  "help": {
+    "overline": "We're Here for You",
+    "title": "Help & Accessibility",
+    "subtitle": "Have a question or need assistance? We're committed to making your experience seamless and inclusive for everyone.",
+    "faqTitle": "Frequently Asked Questions",
+    "faqs": [
+      {
+        "q": "Do you accommodate dietary restrictions?",
+        "a": "Yes — we offer gluten-free, vegetarian, and vegan options. Please inform your server of any allergies when you arrive."
+      },
+      {
+        "q": "Is the restaurant wheelchair accessible?",
+        "a": "Absolutely. Our entrance, dining room, and restrooms are fully accessible for guests with mobility needs."
+      },
+      {
+        "q": "Do you offer private dining for events?",
+        "a": "We have a private dining room for groups up to 20 guests. Contact us to discuss availability and menus."
+      }
+    ],
+    "contactTitle": "Get in Touch",
+    "phoneLabel": "Phone",
+    "phoneValue": "+1 (555) 012-3456",
+    "emailLabel": "Email",
+    "emailValue": "hello@labellacucina.com",
+    "addressLabel": "Address",
+    "addressValue": "12 Via Roma, Suite 1, New York, NY",
+    "hoursLabel": "Hours",
+    "hoursValue": "Mon–Sun · 12pm – 11pm",
+    "accessibilityTitle": "Accessibility Commitment",
+    "accessibilityDesc": "La Bella Cucina is fully wheelchair accessible. We provide large-print menus, assistance for visually impaired guests, and a hearing loop system. Please let us know your needs when booking.",
+    "accessibilityCta": "Contact for Accessibility"
+  },
+  "footer": {
+    "desc": "Authentic Italian fine dining in the heart of the city. A passion for food, a love for people.",
+    "quickLinksTitle": "Quick Links",
+    "hoursTitle": "Opening Hours",
+    "visitTitle": "Visit Us",
+    "links": [
+      { "label": "Menu", "href": "#menu" },
+      { "label": "About Us", "href": "#about" },
+      { "label": "Private Dining", "href": "#contact" },
+      { "label": "Gift Cards", "href": "#" },
+      { "label": "Careers", "href": "#" }
+    ],
+    "hours": [
+      { "day": "Monday – Thursday", "time": "12pm – 10pm" },
+      { "day": "Friday – Saturday", "time": "12pm – 11pm" },
+      { "day": "Sunday", "time": "12pm – 9pm" }
+    ],
+    "address1": "12 Via Roma, Suite 1",
+    "address2": "New York, NY 10001",
+    "phone": "+1 (555) 012-3456",
+    "email": "hello@labellacucina.com",
+    "copyright": "© {{year}} La Bella Cucina. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "login": {
+    "title": "Welcome back",
+    "subtitle": "Sign in to your account",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "password": "Password",
+    "submit": "Sign in",
+    "submitting": "Signing in…",
+    "noAccount": "Don't have an account?",
+    "createOne": "Create one"
+  },
+  "register": {
+    "title": "Create an account",
+    "subtitle": "Create an account to enjoy exclusive offers and more",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "passwordsMismatch": "Passwords do not match.",
+    "submit": "Create account",
+    "submitting": "Creating account…",
+    "haveAccount": "Already have an account?",
+    "signIn": "Sign in"
+  }
+}
