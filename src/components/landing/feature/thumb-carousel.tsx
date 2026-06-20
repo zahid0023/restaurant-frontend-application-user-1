@@ -1,9 +1,9 @@
 import { type CarouselApi, Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { cn } from "@/lib/utils"
-import { type MenuData } from "./menu-carousel"
+import { type FeaturedDishData } from "./menu-carousel"
 
 type ThumbCarouselProps = {
-  data: MenuData[]
+  data: FeaturedDishData[]
   setApi: (api: CarouselApi) => void
   current: number
   onThumbClick: (index: number) => void
@@ -35,7 +35,21 @@ export default function ThumbCarousel({ data, setApi, current, onThumbClick, cla
                   />
                 </svg>
               </div>
-              <img src={item.img} alt={item.imgAlt} className="size-25" />
+              {item.img
+                ? <img src={item.img} alt={item.imgAlt} className="size-25" />
+                : (
+                  <div className="size-25 flex items-center justify-center rounded-xl bg-gradient-to-br from-amber-50 to-orange-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="size-10 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <circle cx="12" cy="12" r="6" />
+                      <line x1="12" y1="2" x2="12" y2="6" />
+                      <line x1="12" y1="18" x2="12" y2="22" />
+                      <line x1="2" y1="12" x2="6" y2="12" />
+                      <line x1="18" y1="12" x2="22" y2="12" />
+                    </svg>
+                  </div>
+                )
+              }
             </div>
           </CarouselItem>
         ))}

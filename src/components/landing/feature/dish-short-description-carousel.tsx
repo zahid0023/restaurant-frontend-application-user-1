@@ -1,9 +1,9 @@
 import { type CarouselApi, Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { cn } from "@/lib/utils"
-import { type MenuData } from "./menu-carousel"
+import { type FeaturedDishData } from "./menu-carousel"
 
 type DishShortDescriptionCarouselProps = {
-  data: MenuData[]
+  data: FeaturedDishData[]
   setApi: (api: CarouselApi) => void
   className?: string
 }

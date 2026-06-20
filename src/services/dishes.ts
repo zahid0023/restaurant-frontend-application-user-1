@@ -1,32 +1,53 @@
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8080/api/v1"
 
-export type FeaturedDishLocale = {
+export type DishLocale = {
+  id: number
   locale_id: number
   name: string
   description: string
+  sort_order: number
 }
 
-export type FeaturedDish = {
+export type DishVariantLocale = {
   id: number
-  locales: FeaturedDishLocale[]
-  cheapest_variant_id: number
+  locale_id: number
+  description: string
+  sort_order: number
+}
+
+export type DishVariantImage = {
+  id: number
+  url: string
+}
+
+export type DishVariant = {
+  id: number
+  is_default: boolean
   price: number
-  img: string
-  img_alt: string
+  locales: DishVariantLocale[]
+  images: DishVariantImage[]
 }
 
-type FeaturedDishesResponse = {
-  data: FeaturedDish[]
+export type PublicDish = {
+  id: number
+  code: string
+  sort_order: number
+  is_featured: boolean
+  locales: DishLocale[]
+  variants: DishVariant[]
 }
 
-export async function getFeaturedDishes(localeId: number = 1): Promise<FeaturedDish[]> {
-  const res = await fetch(`${BASE_URL}/dishes/public/featured`, {
+type PublicDishesResponse = {
+  data: PublicDish[]
+}
+
+export async function getFeaturedDishes(): Promise<PublicDish[]> {
+  const res = await fetch(`${BASE_URL}/dishes/public/all?isFeatured=true`, {
     next: { revalidate: 60 },
   })
 
   if (!res.ok) throw new Error("Failed to fetch featured dishes")
 
-  const json: FeaturedDishesResponse = await res.json()
-
-  return [...json.data].sort((a, b) => a.cheapest_variant_id - b.cheapest_variant_id)
+  const json: PublicDishesResponse = await res.json()
+  return json.data
 }

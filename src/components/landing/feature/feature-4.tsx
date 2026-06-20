@@ -5,12 +5,12 @@ import { type CarouselApi } from '@/components/ui/carousel'
 import { Card, CardContent } from '@/components/ui/card'
 import Heading from './heading'
 import Paragraph from './paragraph'
-import MenuCarousel, { type MenuData } from './menu-carousel'
+import MenuCarousel, { type FeaturedDishData } from './menu-carousel'
 import NameCarousel from './name-carousel'
 import ThumbCarousel from './thumb-carousel'
 import DishShortDescriptionCarousel from './dish-short-description-carousel'
 
-const Feature4 = ({ menudata }: { menudata: MenuData[] }) => {
+const Feature4 = ({ menudata }: { menudata: FeaturedDishData[] }) => {
     const [mainApi, setMainApi] = useState<CarouselApi>()
     const [nameApi, setNameApi] = useState<CarouselApi>()
     const [thumbApi, setThumbApi] = useState<CarouselApi>()
