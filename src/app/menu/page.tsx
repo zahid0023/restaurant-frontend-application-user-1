@@ -30,7 +30,7 @@ export default async function MenuPage() {
           </p>
         </div>
       </header>
-      <section className="mx-auto max-w-6xl py-10">
+      <section className="mx-auto w-full max-w-6xl py-10">
         <MenuView initialMenuTypes={menuTypes} />
       </section>
       <Footer />

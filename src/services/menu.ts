@@ -102,9 +102,14 @@ export async function getPublicCategoriesByMenuType(menuTypeId: number): Promise
   return res.data
 }
 
-export async function getPublicDishesByCategory(categoryId: number): Promise<Dish[]> {
-  const res = await clientFetch<PaginatedResponse<Dish>>(
-    `/menus/public/menu-categories/${categoryId}/dishes?size=50&sort_by=sortOrder`
+export async function getPublicAllDishes(page = 0): Promise<PaginatedResponse<Dish>> {
+  return clientFetch<PaginatedResponse<Dish>>(
+    `/dishes/public/all?size=4&page=${page}&sort_by=sortOrder`
   )
-  return res.data
+}
+
+export async function getPublicDishesByCategory(categoryId: number, page = 0): Promise<PaginatedResponse<Dish>> {
+  return clientFetch<PaginatedResponse<Dish>>(
+    `/menus/public/menu-categories/${categoryId}/dishes?size=4&page=${page}&sort_by=sortOrder`
+  )
 }
