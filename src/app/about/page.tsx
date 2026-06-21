@@ -1,5 +1,5 @@
 import Navbar, { NavigationSection } from "@/components/common/Navbar"
-import Footer from "@/components/landing/footer/footer1"
+import Footer from "@/components/common/footer1"
 import AboutHero from "@/components/about/about-hero"
 import AboutStats from "@/components/about/about-stats"
 import AboutStory from "@/components/about/about-story"

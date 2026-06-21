@@ -16,6 +16,7 @@ import { cn } from '@/lib/utils'
 
 import Logo from '@/components/common/Logo'
 import { MenuIcon } from 'lucide-react'
+import { getRestaurantInfo } from '@/services/restaurant'
 
 export type NavigationSection = {
   title: string
@@ -32,13 +33,29 @@ export type NavRestaurantInfo = {
   isTodayClosed: boolean
 }
 
+const EN_LOCALE_ID = 1
+
 type NavBarProps = {
   navigationData: NavigationSection[]
   className?: string
   restaurantInfo?: NavRestaurantInfo
 }
 
-const NavBar = ({ navigationData, className, restaurantInfo }: NavBarProps) => {
+const NavBar = async ({ navigationData, className, restaurantInfo }: NavBarProps) => {
+  if (!restaurantInfo) {
+    const info = await getRestaurantInfo()
+    const locale = info?.locales.find(l => l.locale_id === EN_LOCALE_ID) ?? info?.locales[0]
+    restaurantInfo = {
+      name: locale?.name ?? null,
+      logoUrl: info?.logo_url ?? null,
+      phone: info?.phone ?? null,
+      email: info?.email ?? null,
+      address: locale?.address ?? null,
+      todayHours: null,
+      isTodayClosed: false,
+    }
+  }
+
   return (
     <>
       {/* Main navbar */}
