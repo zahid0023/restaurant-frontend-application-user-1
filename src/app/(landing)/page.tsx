@@ -8,10 +8,10 @@ import { getFeaturedDishes } from "@/services/dishes"
 import { type FeaturedDishData } from "@/components/landing/feature/menu-carousel"
 
 const navigationData: NavigationSection[] = [
-  { title: 'Home', href: '#' },
+  { title: 'Home', href: '/' },
   { title: 'Menu', href: '/menu' },
-  { title: 'About Us', href: '#' },
-  { title: 'Contact Us', href: '#' },
+  { title: 'About Us', href: '/about' },
+  { title: 'Contact Us', href: '/contact' },
 ]
 
 const EN_LOCALE_ID = 1

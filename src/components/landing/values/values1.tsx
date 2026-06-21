@@ -1,10 +1,10 @@
 "use client"
 
-import { Leaf, ChefHat, Heart, Users } from "lucide-react"
+import { Coffee, Zap, Heart, Users } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import "@/i18n"
 
-const VALUE_ICONS = [Leaf, ChefHat, Heart, Users]
+const VALUE_ICONS = [Coffee, Zap, Heart, Users]
 const VALUE_COLORS = [
   "bg-green-50 text-green-600",
   "bg-amber-50 text-amber-600",

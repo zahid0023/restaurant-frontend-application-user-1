@@ -56,23 +56,23 @@
   "values": {
     "overline": "Our Promise",
     "title": "Why Choose Us",
-    "subtitle": "We believe exceptional dining goes beyond the plate — it's about the people, the passion, and the principles behind every meal.",
+    "subtitle": "We believe a great cup of coffee is more than a drink — it's a ritual, a moment, and a connection worth savoring.",
     "items": [
       {
-        "title": "Farm-Fresh Ingredients",
-        "description": "We source directly from local farms and trusted suppliers to bring you the purest flavors every season."
+        "title": "Single-Origin Beans",
+        "description": "We source premium single-origin beans directly from farmers across Ethiopia, Colombia, and beyond — traced from crop to cup."
       },
       {
-        "title": "Expert Craftsmanship",
-        "description": "Our chefs bring decades of Italian culinary tradition, elevating every dish into a work of art."
+        "title": "Expert Baristas",
+        "description": "Our baristas are trained to craft every espresso, pour-over, and latte with precision, consistency, and care."
       },
       {
-        "title": "Made with Passion",
-        "description": "Every recipe is a labor of love — prepared with care, attention, and an unwavering commitment to taste."
+        "title": "Brewed with Love",
+        "description": "From the first grind to the final pour, every cup is made with intention — because you deserve nothing less."
       },
       {
-        "title": "Family & Community",
-        "description": "A warm, welcoming space for families, friends, and special occasions — because great food brings people together."
+        "title": "Your Third Place",
+        "description": "A cozy, welcoming space to work, meet, and unwind — where everyone knows your order and you always feel at home."
       }
     ]
   },
