@@ -3,6 +3,7 @@
 import { Phone, Mail, MapPin, MessageCircle, Accessibility, Clock } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { Button } from "@/components/ui/button"
+import { ContactCard } from "@/components/ui/contact-card"
 import Link from "next/link"
 import "@/i18n"
 
@@ -11,9 +12,42 @@ interface Faq {
   a: string
 }
 
-export default function HelpAccess() {
+export type DaySchedule = {
+  day: string
+  hours: string
+}
+
+type HelpAccessProps = {
+  phone?: string | null
+  email?: string | null
+  address?: string | null
+  schedule?: DaySchedule[] | null
+}
+
+export default function HelpAccess({ phone, email, address, schedule }: HelpAccessProps) {
   const { t } = useTranslation()
   const faqs = t("help.faqs", { returnObjects: true }) as Faq[]
+
+  const displayPhone = phone ?? "No Information Available"
+  const displayEmail = email ?? "No Information Available"
+  const displayAddress = address ?? "No Information Available"
+  const accessibilityEmail = email ?? ""
+
+  const hoursPreview = schedule?.find(s => s.hours !== "Closed")
+  const hoursValue = hoursPreview ? `${hoursPreview.day}: ${hoursPreview.hours}` : "No Information Available"
+
+  const hoursPopover = schedule && schedule.length > 0 ? (
+    <ul className="text-sm space-y-1.5">
+      {schedule.map(({ day, hours }) => (
+        <li key={day} className="flex justify-between gap-2">
+          <span className="text-stone-600 font-medium w-8 shrink-0">{day}</span>
+          <span className={hours === "Closed" ? "text-red-400" : "text-amber-600 font-medium"}>
+            {hours}
+          </span>
+        </li>
+      ))}
+    </ul>
+  ) : undefined
 
   return (
     <section id="contact" className="py-24 bg-white">
@@ -57,26 +91,29 @@ export default function HelpAccess() {
                 {t("help.contactTitle")}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="border border-stone-100 rounded-2xl p-5">
-                  <Phone className="size-5 text-amber-600 mb-3" />
-                  <p className="font-medium text-stone-800 text-sm mb-1">{t("help.phoneLabel")}</p>
-                  <p className="text-stone-500 text-sm">{t("help.phoneValue")}</p>
-                </div>
-                <div className="border border-stone-100 rounded-2xl p-5">
-                  <Mail className="size-5 text-amber-600 mb-3" />
-                  <p className="font-medium text-stone-800 text-sm mb-1">{t("help.emailLabel")}</p>
-                  <p className="text-stone-500 text-sm">{t("help.emailValue")}</p>
-                </div>
-                <div className="border border-stone-100 rounded-2xl p-5">
-                  <MapPin className="size-5 text-amber-600 mb-3" />
-                  <p className="font-medium text-stone-800 text-sm mb-1">{t("help.addressLabel")}</p>
-                  <p className="text-stone-500 text-sm">{t("help.addressValue")}</p>
-                </div>
-                <div className="border border-stone-100 rounded-2xl p-5">
-                  <Clock className="size-5 text-amber-600 mb-3" />
-                  <p className="font-medium text-stone-800 text-sm mb-1">{t("help.hoursLabel")}</p>
-                  <p className="text-stone-500 text-sm">{t("help.hoursValue")}</p>
-                </div>
+                <ContactCard
+                  icon={Phone}
+                  label={t("help.phoneLabel")}
+                  value={displayPhone}
+                  href={`tel:${displayPhone}`}
+                />
+                <ContactCard
+                  icon={Mail}
+                  label={t("help.emailLabel")}
+                  value={displayEmail}
+                  href={`mailto:${displayEmail}`}
+                />
+                <ContactCard
+                  icon={MapPin}
+                  label={t("help.addressLabel")}
+                  value={displayAddress}
+                />
+                <ContactCard
+                  icon={Clock}
+                  label={t("help.hoursLabel")}
+                  value={hoursValue}
+                  popoverContent={hoursPopover}
+                />
               </div>
             </div>
 
@@ -88,14 +125,16 @@ export default function HelpAccess() {
                 <p className="text-stone-600 text-sm leading-relaxed">
                   {t("help.accessibilityDesc")}
                 </p>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="sm"
-                  className="mt-4 border-amber-300 text-amber-700 hover:bg-amber-100"
-                >
-                  <Link href="mailto:hello@labellacucina.com">{t("help.accessibilityCta")}</Link>
-                </Button>
+                {accessibilityEmail && (
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="sm"
+                    className="mt-4 border-amber-300 text-amber-700 hover:bg-amber-100"
+                  >
+                    <Link href={`mailto:${accessibilityEmail}`}>{t("help.accessibilityCta")}</Link>
+                  </Button>
+                )}
               </div>
             </div>
           </div>
