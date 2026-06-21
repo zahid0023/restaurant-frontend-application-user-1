@@ -21,6 +21,8 @@ const Hero4 = () => {
                         width={1920}
                         height={720}
                         className='min-h-67 w-full object-cover'
+                        loading="eager"
+                        priority
                     />
                 </CardFooter>
             </Card>

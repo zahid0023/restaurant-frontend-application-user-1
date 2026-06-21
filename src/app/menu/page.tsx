@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import Navbar, { NavigationSection } from "@/components/common/Navbar"
 import Footer from "@/components/landing/footer/footer1"
 import MenuView from "@/components/menu/menu-view"

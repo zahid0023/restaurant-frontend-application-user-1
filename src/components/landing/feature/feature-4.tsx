@@ -68,17 +68,17 @@ const Feature4 = ({ menudata }: { menudata: FeaturedDishData[] }) => {
     )
 
     return (
-        <section className='flex min-h-[calc(100dvh)] items-center overflow-x-hidden'>
+        <section className='flex md:min-h-[calc(100dvh)] items-center overflow-x-hidden'>
             <Card className='mx-auto w-full max-w-7xl border-none bg-transparent shadow-none px-4 sm:px-6 lg:px-8'>
                 {/* Section 1: h1 + p + NameCarousel  |  Section 2: MenuCarousel */}
-                <CardContent className='grid grid-cols-1 gap-6 gap-y-12 md:gap-y-16 lg:grid-cols-5 px-0'>
-                    <div className='flex w-full flex-col justify-center gap-5 max-lg:items-center lg:col-span-3 lg:h-95.5'>
+                <CardContent className='grid grid-cols-1 gap-6 gap-y-6 md:gap-y-10 lg:grid-cols-5 px-0'>
+                    <div className='flex w-full flex-col justify-center gap-3 max-lg:items-center lg:col-span-3 lg:h-95.5 lg:gap-5'>
                         <Heading className='max-lg:text-center' />
                         <Paragraph className='max-lg:text-center' />
                         <NameCarousel
                             data={menudata}
                             setApi={setNameApi}
-                            className='mt-18 max-lg:text-center'
+                            className='mt-4 lg:mt-18 max-lg:text-center'
                         />
                     </div>
                     <MenuCarousel
@@ -89,7 +89,7 @@ const Feature4 = ({ menudata }: { menudata: FeaturedDishData[] }) => {
                 </CardContent>
 
                 {/* Section 3: ThumbCarousel  |  Section 4: DishShortDescriptionCarousel */}
-                <CardContent className='grid grid-cols-1 gap-24 gap-y-12 md:gap-y-16 lg:grid-cols-5 px-0'>
+                <CardContent className='grid grid-cols-1 gap-24 gap-y-4 md:gap-y-10 lg:grid-cols-5 px-0'>
                     <ThumbCarousel
                         data={menudata}
                         setApi={setThumbApi}

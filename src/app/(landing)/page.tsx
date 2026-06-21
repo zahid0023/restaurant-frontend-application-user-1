@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import Navbar, { NavigationSection } from "@/components/common/Navbar"
 import Values from "@/components/landing/values/values1"
 import HelpAccess from "@/components/landing/helpaccess/helpaccess1"

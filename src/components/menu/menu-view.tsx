@@ -45,6 +45,8 @@ export default function MenuView({ initialMenuTypes }: MenuViewProps) {
       setDishes((prev) => replace ? res.data : [...prev, ...res.data])
       setHasMore(res.has_next)
       setPage(p)
+    } catch {
+      // network / API error — leave existing dishes in place
     } finally {
       setLoadingDishes(false)
       loadingRef.current = false

@@ -22,7 +22,7 @@ export default function DishShortDescriptionCarousel({ data, setApi, className }
             className="flex h-full min-h-14 w-full flex-col items-center justify-center gap-2 px-6"
           >
             <span className="text-2xl font-bold text-amber-500">{item.price}</span>
-            <p className="text-card-foreground text-center">{item.shortDescription}</p>
+            <p className="text-card-foreground text-center tracking-tight lg:tracking-normal">{item.shortDescription}</p>
           </CarouselItem>
         ))}
       </CarouselContent>
